@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product, products } from './models/product.model';
+import { products } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-landing',

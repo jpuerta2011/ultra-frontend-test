@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./features/landing/landing.module').then(m => m.LandingModule)
+  },
+  {
+    path: 'basket',
+    loadChildren: () => import('./features/basket/basket.module').then(m => m.BasketModule)
   }
 ];
 

@@ -1,0 +1,18 @@
+<div class="product-item">
+  <div>
+    <img class="product-image" [src]="product.imgSrc" (error)="loadDefaultImage($event)">
+  </div>
+  <div class="produc-data">
+    <div class="product-name">
+      {{product.name}}
+    </div>
+    <div class="product-price">
+      {{product.price}}
+    </div>
+  </div>
+  <div class="action">
+    <a (click)="removeProduct()">
+      <mat-icon>delete</mat-icon>
+    </a>
+  </div>
+</div>

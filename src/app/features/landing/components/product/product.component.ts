@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { defaultImage, Product } from '../../models/product.model';
+import { defaultImage, Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-product',

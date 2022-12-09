@@ -1,7 +1,7 @@
 export interface Product {
-  imgSrc: string;
-  name: string;
-  price: number;
+  imgSrc?: string;
+  name?: string;
+  price?: number;
 }
 
 export const defaultImage = '/assets/default-product-image.png';
@@ -62,4 +62,22 @@ export const products: Product[] = [
     imgSrc: "src",
     price: 500000
   }
+]
+
+export const basketProducts: Product[] = [
+  {
+    name: "Product 1",
+    imgSrc: "src",
+    price: 500000
+  },
+  {
+    name: "Product 2",
+    imgSrc: "src",
+    price: 500000
+  },
+  {
+    name: "Product 3",
+    imgSrc: "src",
+    price: 500000
+  },
 ]
