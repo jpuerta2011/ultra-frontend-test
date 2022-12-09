@@ -1,1 +1,26 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand">Marketplace</span>
+    <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed"
+      aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" routerLinkActive="active" routerLink="/survey">            
+            <mat-icon>account_balance_wallet</mat-icon>
+            $100
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLinkActive="active" routerLink="/question">
+            <mat-icon>shopping_cart</mat-icon>
+            Basket
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
