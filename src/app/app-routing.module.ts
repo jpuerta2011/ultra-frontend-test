@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'basket',
     loadChildren: () => import('./features/basket/basket.module').then(m => m.BasketModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./features/checkout/checkout.module').then(m => m.CheckoutModule)
   }
 ];
 
