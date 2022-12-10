@@ -1,10 +1,16 @@
-<div *ngIf="productsList.length > 0; else emptyBasket">
-    <ng-container *ngFor="let product of productsList">
-        <app-basket-product [product]="product" (remove)="onRemoveProduct($event)"></app-basket-product>
-    </ng-container>
+<div *ngIf="productsList.length > 0; else emptyBasket" class="basket-container">
+  <ng-container *ngFor="let product of productsList">
+    <app-basket-product [product]="product" (remove)="onRemoveProduct($event)"></app-basket-product>
+  </ng-container>
+  <div class="summary">
+    <span>Total: $ 50.000.000</span>
+  </div>
+  <div class="actions">
+    <button mat-raised-button color="primary" type="button">Checkout</button>
+  </div>
 </div>
 <ng-template #emptyBasket>
-    <div class="basket-container">
-        <span>No elements in basket</span>
-    </div>
+  <div class="empty-basket">
+    <span>No elements in basket</span>
+  </div>
 </ng-template>
