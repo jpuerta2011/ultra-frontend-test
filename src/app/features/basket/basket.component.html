@@ -1,12 +1,18 @@
-<div *ngIf="productsList.length > 0; else emptyBasket" class="basket-container">
-  <ng-container *ngFor="let product of productsList">
+<div *ngIf="(stateService.basketProductsCount$ | async) ?? 0 > 0; else emptyBasket" class="basket-container">
+  <ng-container *ngFor="let product of stateService.basketProducts$ | async">
     <app-basket-product [product]="product" (remove)="onRemoveProduct($event)"></app-basket-product>
   </ng-container>
   <div class="summary">
-    <span>Total: $ 50.000.000</span>
+    <span>Total: {{(stateService.basketProductsTotalPrice$ | async) | currency}}</span>
+  </div>
+  <div class="summary" *ngIf="notSufficientBalance$ | async">
+    <span style="color: red;">Balance is not sufficient</span>
   </div>
   <div class="actions">
-    <button mat-raised-button color="primary" type="button" routerLink="/checkout">Checkout</button>
+    <button mat-raised-button color="primary" type="button" routerLink="/checkout"
+      [disabled]="!(stateService.basketProductsCount$ | async) || (notSufficientBalance$ | async)">
+      Checkout
+    </button>
   </div>
 </div>
 <ng-template #emptyBasket>

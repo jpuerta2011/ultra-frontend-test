@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { LayoutComponent } from './layout.component';
@@ -19,6 +19,9 @@ const DECLARATIONS = [
     NgbModule,
     RouterModule,
     MatIconModule
+  ],
+  providers: [
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'USD' }
   ],
   exports: DECLARATIONS
 })

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { ProductsService } from 'src/app/services/products.service';
+import { StateService } from 'src/app/services/state.service';
+import { AddProductToBasket } from 'src/app/state/basket/basket.actions';
 import { AddProducts } from 'src/app/state/products/products.actions';
 import { Product } from 'src/app/state/products/products.model';
 
@@ -12,21 +14,23 @@ import { Product } from 'src/app/state/products/products.model';
 })
 export class LandingComponent implements OnInit {
 
-  public products$: Observable<Product[]>;
-
   constructor(
-    private service: ProductsService,
+    public stateService: StateService,
     private readonly store: Store
   ) {
-    this.products$ = this.store.select(s => s.products.products);
-    service.getProducts()
-      .subscribe(p => {
-        console.log(p);
-        this.store.dispatch(new AddProducts(p));
-      });
+    
   }
 
   ngOnInit(): void {
+  }
+
+  onAdd(product: Product) {
+    const index = this.stateService.basketProducts.findIndex(p => p.id === product.id);
+    if (index != -1) {
+      alert("Product was already added");
+      return;
+    }
+    this.store.dispatch(new AddProductToBasket(product));
   }
 
 }

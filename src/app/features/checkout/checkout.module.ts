@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CheckoutComponent } from './checkout.component';
-import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import { SuccessPurchaseComponent } from './components/success-purchase/success-purchase.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,7 +20,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     CheckoutComponent,
-    PersonalInformationComponent,
     SuccessPurchaseComponent
   ],
   imports: [

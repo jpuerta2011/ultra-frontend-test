@@ -1,4 +1,4 @@
-<li class="product-item">
+<li class="product-item" (click)="onClick()">
   <img class="product-image" [src]="product.imageUrl" (error)="loadDefaultImage($event)">
   <div>
     <span>{{product.name}}</span>

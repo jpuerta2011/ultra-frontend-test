@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product, defaultImage } from 'src/app/state/products/products.model';
 
 @Component({
@@ -8,7 +8,8 @@ import { Product, defaultImage } from 'src/app/state/products/products.model';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() product: Product = {};
+  @Input() product: Product = { price: 0};
+  @Output() add = new EventEmitter<Product>();
 
   constructor() { }
 
@@ -17,5 +18,9 @@ export class ProductComponent implements OnInit {
 
   loadDefaultImage(e: any): void {
     e.target.src = defaultImage;
+  }
+
+  onClick() {
+    this.add.emit(this.product);
   }
 }

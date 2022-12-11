@@ -8,7 +8,7 @@ import { Product, defaultImage } from 'src/app/state/products/products.model';
 })
 export class BasketProductComponent implements OnInit {
 
-  @Input() product: Product = {};
+  @Input() product: Product = { price: 0 };
   @Output() remove = new EventEmitter<Product>();
 
   constructor() { }
@@ -22,6 +22,5 @@ export class BasketProductComponent implements OnInit {
 
   removeProduct() {
     this.remove.emit(this.product);
-    console.log("Removed");
   }
 }

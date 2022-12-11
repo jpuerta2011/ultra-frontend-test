@@ -6,7 +6,6 @@ export const environment = {
   production: false,
   dataEndpoints: {
     products: "./assets/local-data/products.json",
-    basket: "./assets/local-data/basket.json",
     wallet: "./assets/local-data/wallet.json"
   }
 };

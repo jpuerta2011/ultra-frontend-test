@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 import { NgxsModule } from '@ngxs/store';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsState } from './state/products/products.state';
+import { BasketState } from './state/basket/basket.state';
+import { WalletState } from './state/wallet/wallet.state';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProductsState } from './state/products/products.state';
     NgbModule,
     HttpClientModule,
     NgxsModule.forRoot([
-      ProductsState
+      ProductsState,
+      BasketState,
+      WalletState
     ]),
     RouterModule.forRoot([{ path: "**", redirectTo: '', pathMatch: 'full' }]),
   ],
