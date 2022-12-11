@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "name": "Product 1",
+    "price": 50,
+    "imageUrl": ""
+  },
+  {
+    "id": 2,
+    "name": "Product 2",
+    "price": 25,
+    "imageUrl": ""
+  },
+  {
+    "id": 3,
+    "name": "Product 3",
+    "price": 70,
+    "imageUrl": ""
+  },
+  {
+    "id": 4,
+    "name": "Product 4",
+    "price": 37,
+    "imageUrl": ""
+  },
+  {
+    "id": 5,
+    "name": "Product 5",
+    "price": 58,
+    "imageUrl": ""
+  },
+  {
+    "id": 6,
+    "name": "Product 6",
+    "price": 60,
+    "imageUrl": ""
+  },
+  {
+    "id": 7,
+    "name": "Product 7",
+    "price": 80,
+    "imageUrl": ""
+  },
+  {
+    "id": 8,
+    "name": "Product 8",
+    "price": 150,
+    "imageUrl": ""
+  },
+  {
+    "id": 9,
+    "name": "Product 9",
+    "price": 200,
+    "imageUrl": ""
+  },
+  {
+    "id": 10,
+    "name": "Product 10",
+    "price": 350,
+    "imageUrl": ""
+  },
+  {
+    "id": 11,
+    "name": "Product 11",
+    "price": 20,
+    "imageUrl": ""
+  },
+  {
+    "id": 12,
+    "name": "Product 12",
+    "price": 140,
+    "imageUrl": ""
+  },
+  {
+    "id": 13,
+    "name": "Product 13",
+    "price": 37,
+    "imageUrl": ""
+  },
+  {
+    "id": 14,
+    "name": "Product 14",
+    "price": 50,
+    "imageUrl": ""
+  },
+  {
+    "id": 15,
+    "name": "Product 15",
+    "price": 220,
+    "imageUrl": ""
+  },
+  {
+    "id": 16,
+    "name": "Product 16",
+    "price": 50,
+    "imageUrl": ""
+  },
+  {
+    "id": 17,
+    "name": "Product 17",
+    "price": 50,
+    "imageUrl": ""
+  },
+  {
+    "id": 18,
+    "name": "Product 18",
+    "price": 1000,
+    "imageUrl": ""
+  },
+  {
+    "id": 19,
+    "name": "Product 19",
+    "price": 1000,
+    "imageUrl": ""
+  }
+]

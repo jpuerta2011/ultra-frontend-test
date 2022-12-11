@@ -1,0 +1,23 @@
+@import '../../../variables.scss';
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  gap: 10px;
+  list-style: none;
+
+  &:after {
+    content: "";
+    flex: auto;
+
+    @media screen and (max-width: $medium) {
+      flex: none;
+    }
+  }
+
+  @media screen and (max-width: $medium) {
+    justify-content: center;
+    padding: 20px;
+  }
+}

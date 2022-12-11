@@ -1,0 +1,54 @@
+<form [formGroup]="form" *ngIf="!showSuccessPurchase; else successPurchase" (ngSubmit)="onSubmit()">
+  <div class="group">
+    <div class="group-name">* Name</div>
+    <mat-form-field appearance="outline" class="name-field">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="name-field">
+      <mat-label>Last</mat-label>
+      <input matInput formControlName="lastName" />
+      <mat-error *ngIf="hasError('lastName', 'required')">Last Name is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="group">
+    <div class="group-name">* Address</div>
+    <mat-form-field appearance="outline" class="field-full-width">
+      <mat-label>Street</mat-label>
+      <input matInput formControlName="street" />
+      <mat-error *ngIf="hasError('street', 'required')">Street is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field-half-width">
+      <mat-label>City</mat-label>
+      <input matInput formControlName="city" />
+      <mat-error *ngIf="hasError('city', 'required')">City is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field-half-width">
+      <mat-label>State</mat-label>
+      <input matInput formControlName="state" />
+      <mat-error *ngIf="hasError('state', 'required')">State is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="group">
+    <div class="group-name">* Email</div>
+    <mat-form-field appearance="outline" class="field-half-width">
+      <input matInput formControlName="email" />
+      <mat-error *ngIf="hasError('email', 'required')">E-mail is required</mat-error>
+      <mat-error *ngIf="hasError('email', 'email')">Please enter a valid E-mail</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="group">
+    Total: {{(stateService.basketProductsTotalPrice$ | async) | currency}}
+  </div>
+  <div class="actions">
+    <button mat-raised-button color="primary" [disabled]="invalid">Pay</button>
+  </div>
+</form>
+<ng-template #successPurchase>
+  <app-success-purchase></app-success-purchase>
+</ng-template>
