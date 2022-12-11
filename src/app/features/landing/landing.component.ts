@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { products } from 'src/app/models/product.model';
+import { Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { ProductsService } from 'src/app/services/products.service';
+import { AddProducts } from 'src/app/state/products/products.actions';
+import { Product } from 'src/app/state/products/products.model';
 
 @Component({
   selector: 'app-landing',
@@ -8,9 +12,19 @@ import { products } from 'src/app/models/product.model';
 })
 export class LandingComponent implements OnInit {
 
-  productsList = products;
+  public products$: Observable<Product[]>;
 
-  constructor() { }
+  constructor(
+    private service: ProductsService,
+    private readonly store: Store
+  ) {
+    this.products$ = this.store.select(s => s.products.products);
+    service.getProducts()
+      .subscribe(p => {
+        console.log(p);
+        this.store.dispatch(new AddProducts(p));
+      });
+  }
 
   ngOnInit(): void {
   }

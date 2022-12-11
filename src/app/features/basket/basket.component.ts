@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { basketProducts, defaultImage, Product } from 'src/app/models/product.model';
+import { Product } from 'src/app/state/products/products.model';
 
 @Component({
   selector: 'app-basket',
@@ -8,7 +8,7 @@ import { basketProducts, defaultImage, Product } from 'src/app/models/product.mo
 })
 export class BasketComponent implements OnInit {
 
-  productsList = basketProducts;
+  productsList: Product[] = [];
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { defaultImage, Product } from 'src/app/models/product.model';
+import { Product, defaultImage } from 'src/app/state/products/products.model';
 
 @Component({
   selector: 'app-product',
@@ -8,11 +8,7 @@ import { defaultImage, Product } from 'src/app/models/product.model';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() product: Product = {
-    imgSrc: '',
-    name: '',
-    price: 0
-  };
+  @Input() product: Product = {};
 
   constructor() { }
 

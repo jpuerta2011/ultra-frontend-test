@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { defaultImage, Product } from 'src/app/models/product.model';
+import { Product, defaultImage } from 'src/app/state/products/products.model';
 
 @Component({
   selector: 'app-basket-product',

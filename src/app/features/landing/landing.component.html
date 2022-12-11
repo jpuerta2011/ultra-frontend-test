@@ -1,5 +1,5 @@
 <ul class="products-list">
-  <ng-container *ngFor="let product of productsList">    
-      <app-product [product]="product"></app-product>
+  <ng-container *ngFor="let product of products$ | async; index as i">
+    <app-product [product]="product"></app-product>
   </ng-container>
 </ul>
