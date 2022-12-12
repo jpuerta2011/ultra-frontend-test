@@ -1,0 +1,5 @@
+<ul class="products-list">
+  <ng-container *ngFor="let product of stateService.products$ | async; index as i">
+    <app-product [product]="product" (add)="onAdd($event)"></app-product>
+  </ng-container>
+</ul>

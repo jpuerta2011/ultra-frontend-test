@@ -1,0 +1,14 @@
+.success-container {
+    display: flex;
+    width: 50%;
+    height: 200px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    div {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,57 @@
+@import '../../../variables.scss';
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin: 3px;
+
+  .group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 100%;
+
+    .group-name {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .actions {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button {
+      align-self: center;
+    }
+  }
+
+  .field-full-width {
+    width: 100%;
+  }
+
+  .field-half-width {
+    width: 45%;
+
+    @media screen and (max-width: $small) {
+      width: 100%;
+    }
+  }
+
+  .name-field {
+    width: 25%;
+
+    @media screen and (max-width: $small) {
+      width: 100%;
+    }
+  }
+
+  mat-form-field {
+    margin: 0 5px 0 0;
+  }
+}

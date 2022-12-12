@@ -1,0 +1,9 @@
+<li class="product-item" (click)="onClick()">
+  <img class="product-image" [src]="product.imageUrl" (error)="loadDefaultImage($event)">
+  <div>
+    <span>{{product.name}}</span>
+  </div>
+  <div>
+    <span>$ {{product.price}}</span>
+  </div>
+</li>
